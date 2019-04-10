@@ -1,5 +1,76 @@
 <!--index.wxml-->
-<marquee class="skip" direction="up" behavior="alternate" width="20" height="30">s</marquee>
+<!-- 轮播 -->
+<swiper
+  indicator-dots="{{indicatorDots}}"
+  indicator-color="green"
+  indicator-active-color="#f40"
+  autoplay="{{autoplay}}"
+  interval="{{interval}}"
+  duration="{{duration}}"
+  easing-function="{{easing-function}}"
+>
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" width="" height="" />
+    </swiper-item>
+  </block>
+</swiper>
+<!-- 列表 -->
+<view class="title">
+  <image
+            style="width: 100rpx; height: 100rpx; background-color: #eeeeee; class='title_img'"
+            mode="aspectFit"
+            lazy-load="true"
+            src="{{songsArry.songListPic}}"
+          ></image>
+  <view class="title_text">
+  {{songsArry.songListName}}
+  </view>
+</view>
+<!-- 歌曲列表 -->
+<view class="song_ul">
+  <block wx:for="{{songsArry.songs}}">
+      <view class="song_per">
+        <image
+              style="width: 100rpx; height: 100rpx; background-color: #eeeeee; class='title_img'"
+              mode="aspectFit"
+              lazy-load="true"
+              src="{{item.pic}}"
+        ></image>
+        <view class="song_name">{{item.name}}</view>
+        <view class="singer">{{item.singer}}</view>
+        <view class="bofang_box">
+          <image
+                style="width: 100rpx; height: 100rpx; background-color: #eeeeee; class='bofang'"
+                mode=""
+                lazy-load="true"
+                src="../images/zhanting.png"
+                catch="goMusic"
+                wx:if="{{imggesP}}"
+          ></image>
+          <image
+                style="width: 100rpx; height: 100rpx; background-color: #eeeeee; class='bofang'"
+                mode=""
+                lazy-load="true"
+                src="../images/bofang.png"
+                catch="goMusic"
+                wx:else="{{imggesP}}"
+          ></image>
+          </view>
+      </view>
+  </block>
+</view>
+
+
+<view class="section">
+  <view class="section__title">flex-direction: row</view>
+  <view class="flex-wrp" style="flex-direction:row;">
+    <view class="flex-item bc_green">1</view>
+    <view class="flex-item bc_red">2</view>
+    <view class="flex-item bc_blue">3</view>
+  </view>
+</view>
+
 <view class="container">
   <view class="userinfo">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
@@ -12,15 +83,4 @@
     <text class="user-motto">{{motto}}</text>
   </view>
 </view>
-<swiper
-  indicator-dots="{{indicatorDots}}"
-  autoplay="{{autoplay}}"
-  interval="{{interval}}"
-  duration="{{duration}}"
->
-  <block wx:for="{{imgUrls}}">
-    <swiper-item>
-      <image src="{{item}}" class="slide-image" width="355" height="150" />
-    </swiper-item>
-  </block>
-</swiper>
+

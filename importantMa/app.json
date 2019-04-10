@@ -1,33 +1,46 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/logs/logs",
     "pages/fans/fans",
-    "pages/user/user"
+    "pages/user/user",
+    "pages/images"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "f66",
     "navigationBarTitleText": "音乐盒",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
+    "backgroundColor": "#000",
+    "selectedColor": "#f40",
+    "borderStyle": "white",
+    "color":"green",
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "首页"
+        "text": "首页",
+        "iconPath": "pages/images/1.png",
+        "selectedIconPath": "pages/images/1c.png"
       },
       {
         "pagePath": "pages/logs/logs",
-        "text": "详情"
+        "text": "详情",
+        "iconPath": "pages/images/1.png",
+        "selectedIconPath": "pages/images/1c.png"
       },
       {
         "pagePath": "pages/fans/fans",
-        "text": "兴趣"
+        "text": "兴趣",
+        "iconPath": "pages/images/1.png",
+        "selectedIconPath": "pages/images/1c.png"
       },
       {
         "pagePath": "pages/user/user",
-        "text": "我的"
+        "text": "我的",
+        "iconPath": "pages/images/1.png",
+        "selectedIconPath": "pages/images/1c.png"
       }
     ]
   },

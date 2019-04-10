@@ -20,6 +20,55 @@
 .usermotto {
   margin-top: 200px;
 }
+/*  页面颜色 */
 page{
   background-color:#cecece
+}
+.slide-image{
+  width:750rpx;
+}
+.title{
+  margin-top: 3px;
+  height: 100rpx;
+  width: 100%;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+}
+.song_per{
+  width: 94%;
+  margin: auto;
+  height: 100rpx;
+  background: greenyellow;
+  margin-top: 3px;
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+}
+.song_per .title_img{
+}
+.song_per .song_name{
+  width:400rpx;
+  /* background:green; */
+  width:250rpx;
+  height: 50rpx;
+  font-size: 36rpx;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis; 
+}
+.song_per .singer{
+  /* background: #f49; */
+  width:200rpx;
+  height: 50rpx;
+  font-size: 30rpx;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis; 
+}
+.song_per .bofang_box{
+  width:100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  overflow: hidden;
 }

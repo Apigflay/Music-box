@@ -5,10 +5,17 @@ const app = getApp()
 Page({
   data: {
     imgUrls: ['https://y.gtimg.cn/music/common/upload/MUSIC_FOCUS/1230486.jpg?max_age=2592000', 'https://y.gtimg.cn/music/common/upload/MUSIC_FOCUS/1233464.jpg?max_age=2592000', 'https://y.gtimg.cn/music/common/upload/MUSIC_FOCUS/1230131.jpg?max_age=2592000','https://y.gtimg.cn/music/common/upload/MUSIC_FOCUS/1234416.jpg?max_age=2592000'],
+    indicatorDots:'true',
+    autoplay:"true",
+    interval:"3000",
+    duration:2000,
+    "easing-function":"linear",
     motto: '跳动的世界',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    // canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    songsArry:{},
+    imggesP:"true"//播放更换图片
   },
   //事件处理函数
   bindViewTap: function() {
@@ -17,6 +24,18 @@ Page({
     })
   },
   onLoad: function () {
+    // 获取用户信息
+    wx.getUserInfo({
+      success(res) {
+        // const userInfo = res.userInfo
+        // const nickName = userInfo.nickName
+        // const avatarUrl = userInfo.avatarUrl
+        // const gender = userInfo.gender // 性别 0：未知、1：男、2：女
+        // const province = userInfo.province
+        // const city = userInfo.city
+        // const country = userInfo.country
+      }
+    })
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -43,6 +62,34 @@ Page({
         }
       })
     }
+    var that = this;
+    wx.request({
+      url: 'https://api.itooi.cn/music/netease/songList', //仅为示例，并非真实的接口地址
+      method:"GET",
+      data: {
+        "key": '579621905',
+        "id": '3778678',
+        "limit":'10',
+        "offset":"0"
+      },
+      success: function (res) {
+        console.log(res.data.data)
+        that.setData({
+          songsArry: res.data.data
+        })
+
+        wx.playBackgroundAudio({
+          // dataUrl: res.data.data.songs[0].url
+        })
+      }
+    })
+  },
+  // 点击播放
+  goMusic:function(e){
+    this.setData({
+      imggesP:"false"
+    })
+    console.log("111")
   },
   getUserInfo: function(e) {
     console.log(e)
