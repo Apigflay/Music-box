@@ -1,14 +1,6 @@
 <!--index.wxml-->
 <!-- 轮播 -->
-<swiper
-  indicator-dots="{{indicatorDots}}"
-  indicator-color="green"
-  indicator-active-color="#f40"
-  autoplay="{{autoplay}}"
-  interval="{{interval}}"
-  duration="{{duration}}"
-  easing-function="{{easing-function}}"
->
+<swiper indicator-dots="{{indicatorDots}}" indicator-color="green" indicator-active-color="#f40" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" easing-function="{{easing-function}}">
   <block wx:for="{{imgUrls}}">
     <swiper-item>
       <image src="{{item}}" class="slide-image" width="" height="" />
@@ -17,47 +9,30 @@
 </swiper>
 <!-- 列表 -->
 <view class="title">
-  <image
-            style="width: 100rpx; height: 100rpx; background-color: #eeeeee; class='title_img'"
-            mode="aspectFit"
-            lazy-load="true"
-            src="{{songsArry.songListPic}}"
-          ></image>
+  <image style="width: 100rpx; height: 100rpx; background-color: #eeeeee; class='title_img'" mode="aspectFit" lazy-load="true" src="{{songsArry.songListPic}}"></image>
   <view class="title_text">
-  {{songsArry.songListName}}
+    {{songsArry.songListName}}
   </view>
 </view>
 <!-- 歌曲列表 -->
 <view class="song_ul">
   <block wx:for="{{songsArry.songs}}">
-      <view class="song_per">
-        <image
-              style="width: 100rpx; height: 100rpx; background-color: #eeeeee; class='title_img'"
-              mode="aspectFit"
-              lazy-load="true"
-              src="{{item.pic}}"
-        ></image>
-        <view class="song_name">{{item.name}}</view>
-        <view class="singer">{{item.singer}}</view>
-        <view class="bofang_box">
-          <image
-                style="width: 100rpx; height: 100rpx; background-color: #eeeeee; class='bofang'"
-                mode=""
-                lazy-load="true"
-                src="../images/zhanting.png"
-                catch="goMusic"
-                wx:if="{{imggesP}}"
-          ></image>
-          <image
-                style="width: 100rpx; height: 100rpx; background-color: #eeeeee; class='bofang'"
-                mode=""
-                lazy-load="true"
-                src="../images/bofang.png"
-                catch="goMusic"
-                wx:else="{{imggesP}}"
-          ></image>
-          </view>
+    <view class="song_per">
+      <image style="width: 100rpx; height: 100rpx; background-color: #eeeeee; class='title_img'" mode="aspectFit" lazy-load="true" src="{{item.pic}}"></image>
+      <view class="song_name">{{item.name}}</view>
+      <view class="singer">{{item.singer}}</view>
+<!-- 111111 -->
+
+
+      <view class="bofang_box" id="{{index}}" catchtap="goMusic" >
+      <!-- {{index}} -->
+        <image style="width: 100rpx; height: 100rpx; background-color: #eeeeee; " class='bofang' mode="" lazy-load="true" src="../images/bofang.png"  wx:if="{{index==lunIndex}}"></image>
+        <image style="width: 100rpx; height: 100rpx; background-color: #eeeeee;"  class='bofang' mode="" lazy-load="true" src="../images/zhanting.png" wx:else></image>
       </view>
+<!-- 11111 -->
+
+
+    </view>
   </block>
 </view>
 
@@ -83,4 +58,3 @@
     <text class="user-motto">{{motto}}</text>
   </view>
 </view>
-
