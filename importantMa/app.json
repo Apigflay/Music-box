@@ -3,8 +3,7 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/fans/fans",
-    "pages/user/user",
-    "pages/images"
+    "pages/user/user"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -16,7 +15,7 @@
     "backgroundColor": "#000",
     "selectedColor": "#f40",
     "borderStyle": "white",
-    "color":"green",
+    "color": "green",
     "list": [
       {
         "pagePath": "pages/index/index",

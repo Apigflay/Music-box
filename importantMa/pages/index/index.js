@@ -15,7 +15,8 @@ Page({
     hasUserInfo: false,
     // canIUse: wx.canIUse('button.open-type.getUserInfo'),
     songsArry:{},
-    imggesP:"true"//播放更换图片
+    imggesP:true,//播放更换图片
+    lunIndex:-1//轮播判断值
   },
   //事件处理函数
   bindViewTap: function() {
@@ -73,13 +74,19 @@ Page({
         "offset":"0"
       },
       success: function (res) {
-        console.log(res.data.data)
+        // console.log(res.data.data)
+        // let data = res.data.data.songs
+        // data.forEach(function(i,v){
+        //   data[v]['issao'] = false
+        // })
+        // res.data.data.songs = data
+
         that.setData({
           songsArry: res.data.data
         })
-
+       
         wx.playBackgroundAudio({
-          // dataUrl: res.data.data.songs[0].url
+          // dataUrl: res.data.data.songs[1].url
         })
       }
     })
@@ -87,9 +94,13 @@ Page({
   // 点击播放
   goMusic:function(e){
     this.setData({
-      imggesP:"false"
+      // songsArry:temp
+      lunIndex:e.currentTarget.id
     })
-    console.log("111")
+    // console.log(this.data.songsArry.songs)
+    wx.playBackgroundAudio({
+      dataUrl: this.data.songsArry.songs[e.currentTarget.id].url
+    })
   },
   getUserInfo: function(e) {
     console.log(e)
