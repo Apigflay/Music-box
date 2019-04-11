@@ -97,9 +97,16 @@ Page({
       // songsArry:temp
       lunIndex:e.currentTarget.id
     })
-    // console.log(this.data.songsArry.songs)
+    console.log(this.data.songsArry.songs)
     wx.playBackgroundAudio({
       dataUrl: this.data.songsArry.songs[e.currentTarget.id].url
+    })
+    // 播放页面传递的参数
+    var sing_canshu = this.data.songsArry.songs[e.currentTarget.id]
+    // console.log(sing_canshu)
+    // 同时进行页面跳转
+    wx.navigateTo({
+      url: '../bofang/bofang?id=' + encodeURIComponent(JSON.stringify(sing_canshu)),
     })
   },
   getUserInfo: function(e) {

@@ -1,0 +1,31 @@
+<!--pages/bofang/bofang.wxml-->
+<!-- 音乐播放器界面 -->
+<text>pages/bofang/bofang.wxml</text>
+<view class="bofang_area">
+  <image class="bofang_bg" style="background-color: #eeeeee;" mode="{{item.mode}}" src="{{bofangUrl}}"></image>
+</view>
+<view class="name">
+  {{messageObj.name}}--{{messageObj.singer}}
+</view>
+<button
+  class="getGeci"
+  type="primary"
+  size="mini"
+  loading="{{loading}}"
+  plain="{{plain}}"
+  disabled="{{disabled}}"
+  bindtap="getMusic"
+  hover-class="other-button-hover"
+>
+  获取歌词
+</button>
+<view class="">
+  {{songLyric}}
+</view>
+<scroll-view class="scroll_view"  scroll-y="true" scroll-with-animation='true' scroll-top='{{marginTop}}'>
+      <view class='contentText'>
+           <block wx:for='{{storyContent}}'>
+               <text class="{{currentIndex222 == index ? 'currentTime' : ''}}">{{item[1]}}</text>
+            </block>
+       </view>
+</scroll-view>

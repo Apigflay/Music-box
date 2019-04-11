@@ -1,0 +1,41 @@
+/* pages/bofang/bofang.wxss */
+page{
+  
+}
+.bofang_area{
+  height: 400rpx;
+  width: 100%;
+  /* background: red; */
+}
+.bofang_bg{
+  width: 400rpx;
+  height: 400rpx;
+  margin: auto;
+  margin-left: 175rpx;
+}
+.name{
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  color:#f40;
+  /* margin-top: 20rpx;
+  margin-bottom: 20rpx; */
+}
+.getGeci{
+  margin: auto;
+  left:50%;
+  margin-left:-94rpx;
+
+}
+.currentTime{
+  color:red;
+}
+.contentText{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.scroll_view{
+  height: 300rpx;
+}

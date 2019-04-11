@@ -1,9 +1,11 @@
 {
   "pages": [
+    
     "pages/index/index",
     "pages/logs/logs",
     "pages/fans/fans",
-    "pages/user/user"
+    "pages/user/user",
+    "pages/bofang/bofang"
   ],
   "window": {
     "backgroundTextStyle": "light",
