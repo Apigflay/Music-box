@@ -30,21 +30,34 @@
         <image style="width: 100rpx; height: 100rpx; background-color: #eeeeee;"  class='bofang' mode="" lazy-load="true" src="../images/zhanting.png" wx:else></image>
       </view>
 <!-- 11111 -->
-
-
     </view>
   </block>
 </view>
+ <!-- 天气  -->
+ <view class='{{topView==1?"topViewShow":"topViewClose"}}'>
+    <view class='close' bindtap='goClose'>
+  点我关闭
+    </view>
+    <view class="clall_father" bindtap='goSearchWeather'>差等天氣11</view>
+    <view class="weather"> 
+      <text>{{weatherData}}</text> 
+    </view>
+ 
+ </view>
 
+ <view class="call_area">
+    <text class="user-motto">长的丑又不是我的错，找我爸爸去</text>
+    <view class="clall_father" bindtap='goCall'>給爸爸點電話</view>
+  </view>
 
-<view class="section">
+<!-- <view class="section">
   <view class="section__title">flex-direction: row</view>
   <view class="flex-wrp" style="flex-direction:row;">
     <view class="flex-item bc_green">1</view>
     <view class="flex-item bc_red">2</view>
     <view class="flex-item bc_blue">3</view>
   </view>
-</view>
+</view> -->
 
 <view class="container">
   <view class="userinfo">

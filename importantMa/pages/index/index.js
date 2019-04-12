@@ -1,5 +1,6 @@
 //index.js
 //获取应用实例
+var bmap = require('../libs/bmap-wx.min.js')
 const app = getApp()
 
 Page({
@@ -14,9 +15,11 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     // canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    songsArry:{},
+    songsArry:{},//歌曲信息
     imggesP:true,//播放更换图片
-    lunIndex:-1//轮播判断值
+    lunIndex:-1,//轮播判断值
+    topView:1,//天气的显示隐藏
+    weatherData: ''//天氣
   },
   //事件处理函数
   bindViewTap: function() {
@@ -25,6 +28,28 @@ Page({
     })
   },
   onLoad: function () {
+    //天氣
+    var that = this;
+    // 新建百度地图对象 
+    var BMap = new bmap.BMapWX({
+      ak: 'wnuutELgnvKagUHs2iGTTu77uKdjpC9y'
+    });
+    var fail = function (data) {
+      console.log(data)
+    };
+    var success = function (data) {
+      console.log(data)
+      var weatherData = data.currentWeather[0];
+      weatherData = '城市：' + weatherData.currentCity + '\n' + 'PM2.5：' + weatherData.pm25 + '\n' + '日期：' + weatherData.date + '\n' + '温度：' + weatherData.temperature + '\n' + '天气：' + weatherData.weatherDesc + '\n' + '风力：' + weatherData.wind + '\n';
+      that.setData({
+        weatherData: weatherData
+      });
+    }
+    // 发起weather请求 
+    BMap.weather({
+      fail: fail,
+      success: success
+    }); 
     // 获取用户信息
     wx.getUserInfo({
       success(res) {
@@ -107,6 +132,50 @@ Page({
     // 同时进行页面跳转
     wx.navigateTo({
       url: '../bofang/bofang?id=' + encodeURIComponent(JSON.stringify(sing_canshu)),
+    })
+  },
+  // 关闭信息弹框
+  goClose:function(){
+    this.setData({
+      topView:2
+    })
+  },
+  // 打电话
+  goCall:function(){
+    wx.makePhoneCall({
+      phoneNumber: '15713801628' // 仅为示例，并非真实的电话号码
+    })
+  },
+  getWeather:function(){
+    wx.request({
+      url: 'https://api.itooi.cn/music/netease/songList', //仅为示例，并非真实的接口地址
+      method: "GET",
+      data: {
+        "key": '579621905',
+        "id": '3778678'
+      },
+      success: function (res) {
+       
+
+        that.setData({
+          songsArry: res.data.data
+        })
+
+      
+      }
+    })
+  },
+  //查天氣120.15515  30.27415
+  goSearchWeather:function(){
+    wx.getLocation({
+      type: 'wgs84',
+      success: function (res) {
+        console.log(res)
+        var latitude = res.latitude
+        var longitude = res.longitude
+        
+       
+      }
     })
   },
   getUserInfo: function(e) {

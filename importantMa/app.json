@@ -9,9 +9,14 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "f66",
-    "navigationBarTitleText": "音乐盒",
-    "navigationBarTextStyle": "black"
+    "navigationBarBackgroundColor": "#31C27C",
+    "navigationBarTitleText": "玻璃碎片",
+    "navigationBarTextStyle": "white"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
   },
   "tabBar": {
     "backgroundColor": "#000",
