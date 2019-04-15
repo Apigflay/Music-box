@@ -1,0 +1,128 @@
+/* pages/weather/weather.wxss */
+page{
+  background: #50AC56;
+}
+.topViewShow{
+  /* position: absolute; */
+  /* width: 100%; */
+  /* height:100%; */
+  background:#50AC56;
+  /* top:0; */
+  /* left: 5%; */
+}
+.topViewClose{
+  display: none;
+}
+.top{
+  padding-top:40rpx;
+  padding-left:30rpx;
+}
+.close{
+  line-height: 80rpx;
+  vertical-align: center;
+  position: absolute;
+  top:0;
+  right:0;
+  /* width: 20rpx; */
+  /* height: 20rpx; */
+  /* background: red; */
+  color:red;
+  font-weight: 900;
+}
+.close .img{
+  position: relative;
+  top:30rpx;
+}
+.weather{
+  margin-top:100rpx;
+  text-align: center;
+  color: #fff;
+  padding-top:40rpx;
+  padding-bottom: 40rpx;
+}
+.futureWeatherTltle{
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 50rpx;
+  color:#f40;
+  font-weight: 900;
+  text-shadow: 5px 10px 5px #FF0000;
+}
+.weatherTips{
+  padding-right: 20rpx;
+  padding-left: 20rpx;
+}
+.weatherTips .index{
+  font-size: 40rpx;
+  font-weight: 700;
+}
+.weatherTips .des{
+  /* font-size: 40rpx; */
+  line-height: 50rpx;
+}
+.weatherTips .title{
+  font-size: 36rpx;
+  line-height: 80rpx;
+  color: rgb(243, 14, 45);
+}
+.getFutureShow{
+  margin-bottom: 30rpx;
+  margin-top:20rpx;
+  height: 100rpx;
+  width:500rpx;
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 50rpx;
+  color:#f40;
+  font-weight: 900;
+  border-radius: 50rpx;
+  border:2rpx solid #f40;
+  margin-left:125rpx;
+  /* text-shadow: 5px 10px 5px #FF0000; */
+}
+.getFutureHide{
+  display: none;
+}
+.futureWeatherShow{
+  display: block;
+}
+.futureWeatherHide{
+  display: none;
+  padding-bottom: 40rpx;
+}
+.futureWeatherTltleUnderhide{
+  display: none;
+}
+.futureWeatherTltleUndershow{
+  display: block;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 50rpx;
+  color:#f40;
+  font-weight: 900;
+  text-shadow: 5px 10px 5px #FF0000;
+  
+}
+.futureWeatherShow{
+  padding-left:20rpx;
+  padding-right:20rpx;
+  text-align: center;
+  line-height: 80rpx;
+  margin-bottom:30rpx;
+}
+.futureWeatherShow .weatherImg{
+  display: inline-block;
+  position: relative;
+  top:20rpx;
+}
+.date{
+  margin-top:30rpx;
+  font-weight: 900;
+}
+.careX{
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  padding-bottom: 30rpx;
+}

@@ -14,6 +14,10 @@
     {{songsArry.songListName}}
   </view>
 </view>
+<!-- 快进 -->
+<view class="title" bindtap='listenerButtonSeek'>
+ 快进
+</view>
 <!-- 歌曲列表 -->
 <view class="song_ul">
   <block wx:for="{{songsArry.songs}}">
@@ -33,33 +37,13 @@
     </view>
   </block>
 </view>
- <!-- 天气  -->
- <view class='{{topView==1?"topViewShow":"topViewClose"}}'>
-    <view class='close' bindtap='goClose'>
-  点我关闭
-    </view>
-    <view class="clall_father" bindtap='goSearchWeather'>差等天氣11</view>
-    <view class="weather"> 
-      <text>{{weatherData}}</text> 
-    </view>
- 
- </view>
-
  <view class="call_area">
     <text class="user-motto">长的丑又不是我的错，找我爸爸去</text>
-    <view class="clall_father" bindtap='goCall'>給爸爸點電話</view>
+    <view class="clall_father" bindtap='goCall'>給爸爸點電話<image class="img" style="width: 80rpx; height: 80rpx; background-color: ;"  mode="" lazy-load="true" src="../images/you.png"></image></view>
   </view>
 
-<!-- <view class="section">
-  <view class="section__title">flex-direction: row</view>
-  <view class="flex-wrp" style="flex-direction:row;">
-    <view class="flex-item bc_green">1</view>
-    <view class="flex-item bc_red">2</view>
-    <view class="flex-item bc_blue">3</view>
-  </view>
-</view> -->
 
-<view class="container">
+<!-- <view class="container">
   <view class="userinfo">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
     <block wx:else>
@@ -70,4 +54,4 @@
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
   </view>
-</view>
+</view> -->

@@ -1,0 +1,40 @@
+<!--pages/weather/weather.wxml-->
+
+ <!-- 天气  -->
+ <!-- 需要使用 button 来授权登录 -->
+<button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+ <view class='{{topView==1?"topViewShow":"topViewClose"}}'>
+    <view class='top'>不忘初心，方得始终</view>
+    <view class='close' bindtap='goClose'>
+      去听歌
+      <image class="img" style="width: 80rpx; height: 80rpx; background-color: ;"  mode="" lazy-load="true" src="../images/you.png"></image>
+    </view>
+    <view class="weather"> 
+      <text>{{weatherData}}</text> 
+    </view>
+    <!-- 天气提示 -->
+    <view class="futureWeatherTltle">天气小提醒</view>
+    <view class="weatherTips"> 
+      <block wx:for="{{weatherTips}}" wx:key="{{key}}">
+        <view class='index'>{{index+1}}:{{item.title}}</view>
+        <view class='des'>{{item.des}}</view>
+        <view  class='title'>{{item.title}}指数：{{item.zs}}</view>
+      </block>
+    </view>
+    <!-- 未来天气 -->
+    <view class="{{futureWeatherTltleUnder==1?'futureWeatherTltleUnderhide':'futureWeatherTltleUndershow'}}">天气小提醒</view>
+    <view class="{{getFuture==1?'getFutureShow':'getFutureHide'}}" bindtap='getFutureW'>获取未来天气状况</view>
+    <view class="{{futureWeatherShow==1?'futureWeatherHide':'futureWeatherShow'}}"> 
+      <block wx:for="{{futureWeather}}" wx:key="{{key}}">
+        <view class="date">{{item.date}}</view>
+        <view>{{item.temperature}}</view>
+        <view>{{item.weather}}</view>
+        <view>{{item.wind}}</view>
+        今日白天<image class="weatherImg" style="width: 100rpx; height: 100rpx; background-color: ;"  mode="" lazy-load="true" src="{{item.dayPictureUrl}}"></image>
+        今日夜晚<image class="weatherImg" style="width: 100rpx; height: 100rpx; background-color: ;"  mode="" lazy-load="true" src="{{item.nightPictureUrl}}"></image>
+      </block>
+    </view>
+    <view class="careX" wx:if="{{xingbie==1}}">小王子，请别忘了关心你的小仙女！</view>
+    <view class="careX" wx:elif="{{xingbie==2}}">小仙女，请别忘了关心你的小王子！</view>
+    <view class="careX" wx:else>你是男的女的</view>
+ </view>

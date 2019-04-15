@@ -72,31 +72,8 @@ page{
   border-radius: 50%;
   overflow: hidden;
 }
-/* 天气 */
-.topViewShow{
-  position: absolute;
-  width: 100%;
-  height:100%;
-  background:#50AC56;
-  top:0;
-  /* left: 5%; */
-}
-.topViewClose{
-  display: none;
-}
 
-.close{
-  position: absolute;
-  top:0;
-  right:0;
-  width: 20rpx;
-  height: 20rpx;
-  background: red;
-}
-.weather{
-  text-align: center;
-  color: #fff;
-}
+
 /* 打电话 */
 .call_area{
   background: #cececf
