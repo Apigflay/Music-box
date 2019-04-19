@@ -1,8 +1,9 @@
 {
   "pages": [
     
-    "pages/index/index",
+    
     "pages/weather/weather",
+    "pages/index/index",
     "pages/logs/logs",
     "pages/fans/fans",
     "pages/user/user",

@@ -60,14 +60,25 @@ Page({
     wx.playBackgroundAudio({
       dataUrl: this.data.songsArry.songs[e.currentTarget.id].url,
       title: this.data.songsArry.songs[e.currentTarget.id].name,
-      coverImgUrl: this.data.songsArry.songs[e.currentTarget.id].pic
+      coverImgUrl: this.data.songsArry.songs[e.currentTarget.id].pic,
+      success:function(res){
+        console.log(res)
+      },
+      fail:function(err){
+        console.log(err)
+      },
+      complete:function(com){
+        console.log(com)
+      }
     })
     wx.onBackgroundAudioStop(function(){
-      console.log(that.data.songsArry.songs)
-      var nextIndex = e.currentTarget.id * 1 + 1;
-      console.log(e.currentTarget.id*1+1)
+      // console.log(that.data.songsArry.songs)
+      var nextIndex = that.data.lunIndex * 1 + 1;
+      that.setData({
+        lunIndex: nextIndex
+      })
+      // console.log(nextIndex)
       wx.playBackgroundAudio({
-        
         dataUrl: that.data.songsArry.songs[nextIndex].url,
         title: that.data.songsArry.songs[nextIndex].name,
         coverImgUrl: that.data.songsArry.songs[nextIndex].pic
