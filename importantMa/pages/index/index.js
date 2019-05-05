@@ -93,9 +93,9 @@ Page({
     var sing_canshu = this.data.songsArry.songs[e.currentTarget.id]
     // console.log(sing_canshu)
     // 同时进行页面跳转
-    // wx.navigateTo({
-    //   url: '../bofang/bofang?id=' + encodeURIComponent(JSON.stringify(sing_canshu)),
-    // })
+    wx.navigateTo({
+      url: '../bofang/bofang?id=' + encodeURIComponent(JSON.stringify(sing_canshu)),
+    })
   },
   // // 关闭信息弹框
   // goClose:function(){
@@ -113,6 +113,12 @@ Page({
   goCall:function(){
     wx.makePhoneCall({
       phoneNumber: '15713801628' // 仅为示例，并非真实的电话号码
+    })
+  },
+  // 分包
+  goF: function () {
+    wx.navigateTo({
+      url: '../../pageA/pages/cat/cat',
     })
   }
 })

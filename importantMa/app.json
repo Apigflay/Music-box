@@ -1,14 +1,30 @@
 {
   "pages": [
-    
-    "pages/index/index",
     "pages/weather/weather",
-    
+    "pages/index/index",
     "pages/logs/logs",
     "pages/fans/fans",
     "pages/user/user",
     "pages/bofang/bofang"
+   
   ],
+  "subpackages": [
+    {
+      "root": "pageA",
+      "pages": [
+        "pages/cat/cat",
+        "pages/dog/dog"
+      ]
+    }
+  ],
+  "preloadRule": {
+    "pages/index/index": {
+      "network": "all",
+      "packages": [
+        "pageA"
+      ]
+    }
+  },
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#31C27C",

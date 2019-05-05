@@ -41,7 +41,7 @@
     <text class="user-motto">长的丑又不是我的错，找我爸爸去</text>
     <view class="clall_father" bindtap='goCall'>給爸爸點電話<image class="img" style="width: 80rpx; height: 80rpx; background-color: ;"  mode="" lazy-load="true" src="../images/you.png"></image></view>
   </view>
-
+<view class="clall_father" bindtap='goF'>分包<image class="img" style="width: 80rpx; height: 80rpx; background-color: ;"  mode="" lazy-load="true" src="../images/you.png"></image></view>
 
 <!-- <view class="container">
   <view class="userinfo">

@@ -99,6 +99,11 @@ Page({
       url:'../index/index'
     })
   },
+  goF111: function () {
+    wx.navigateTo({
+      url: '../../pageA/pages/cat/cat',
+    })
+  },
   getFutureW:function(){
     this.setData({
       futureWeatherShow: 2,

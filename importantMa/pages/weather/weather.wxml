@@ -38,3 +38,4 @@
     <view class="careX" wx:elif="{{xingbie==2}}">小仙女，请别忘了关心你的小王子！</view>
     <view class="careX" wx:else>你是男的女的</view>
  </view>
+ <view class="clall_father" bindtap='goF111'>分包<image class="img" style="width: 80rpx; height: 80rpx; background-color: ;"  mode="" lazy-load="true" src="../images/you.png"></image></view>
